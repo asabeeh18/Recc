@@ -1,0 +1,43 @@
+Alternative Titles
+Synonyms
+Japanese
+
+Information
+Type
+Episodes <int>
+Status
+Aired <date>
+Producers <text list comma>
+Licensors <text list comma>
+Studios <text list comma>
+Source
+Genres <text list comma>
+Duration<time duration>
+Rating <text number>
+
+Statistics
+Score <double> <user count>
+Ranked <int>
+Popularity <int>
+Members <int>
+Favorites <int>
+
+External Links
+<URI List> Official Site, AnimeDB, AnimeNewsNetwork, Wikipedia
+
+Recomm <Id list>
+
+Stats
+Watching
+Completed
+On-Hold
+Dropped
+Plan to Watch
+Total
+
+Members
+name,score,status
+
+Char and staff
+char,role,seyiuu*lang
+staffname-poz
