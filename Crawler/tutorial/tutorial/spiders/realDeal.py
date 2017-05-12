@@ -19,7 +19,6 @@ class QuotesSpider(scrapy.Spider):
     def parse(self, response):
         f=open("opFIle", 'w', 1024);
 
-
         next_page = response.css('.table-recently-updated+div a::attr("href")').extract()
         if len(next_page)>1:
             next_page=next_page[1]

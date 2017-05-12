@@ -5,15 +5,18 @@ import scrapy
 
 class QuotesSpider(scrapy.Spider):
     name = "quotes"
+    animeCount = 34815
     start_urls = [
         'https://myanimelist.net/anime/1',
     ]
+
 
     def parse(self, response):
         f1 = open('./vals', 'w')
         db = open('./debug', 'w')
         view = open('./vw', 'w')
         tb = open('./tb', 'w')
+        mem= open('./members', 'w')
         #print("---HERE RESPONSE")
         # print(response)
         #print("---HERE END RESPONSE")
@@ -21,7 +24,11 @@ class QuotesSpider(scrapy.Spider):
         # for quote in response.css('.di-tc.va-m.al.pl4>a::text'):
         #    print("Looping")
         #    print("-----::"+str(quote.extract()))
+        stat=response.css('#horiznav_nav ul li:nth-child(6) a::attr(href)')
+
+        print(str(stat.extract()[0]), file=mem)
         resp = response.css('div.js-scrollfix-bottom')
+
         # print("CSS: " + str(resp),file=db)
 
         # for quote in response.css('.dark_text::text'):
@@ -67,15 +74,16 @@ class QuotesSpider(scrapy.Spider):
                             if j == len(raw_list):
                                 break
                         j -= 1
-                        print(s+":"+v, file=db)
-                        table[s] = v
+                        #print(s+":"+v, file=db)
+                        table[s] = v.strip()
             for j in keys:
-                print(table[j], file=tb)
+                print(table[j], end='|', file=tb)
         print("---HERE END OUTPUT")
         f1.close()
         view.close()
         db.close()
         tb.close()
+
         next_page = response.css('.table-recently-updated+div a::attr("href")').extract()
         if len(next_page) > 1:
             next_page = next_page[1]

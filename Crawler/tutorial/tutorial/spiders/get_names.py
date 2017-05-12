@@ -13,7 +13,7 @@ class QuotesSpider(scrapy.Spider):
         print ("---HERE RESPONSE")
         print (response)
         print ("---HERE END RESPONSE")
-        #for quote in response.css('td.borderClass.di-t.w100 > div.di-tc.va-m.al.pl4'):
+        # for quote in response.css('td.borderClass.di-t.w100 > div.di-tc.va-m.al.pl4'):
         for quote in response.css('.di-tc.va-m.al.pl4>a::text'):
             print("Looping")
             print("-----::"+str(quote.extract()))
