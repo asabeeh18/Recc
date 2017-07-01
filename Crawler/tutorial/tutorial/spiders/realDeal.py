@@ -4,9 +4,9 @@ import scrapy
 
 
 class QuotesSpider(scrapy.Spider):
-    name = "quotes"
+    name = "quotes1"
 
-    url0 = 'https://myanimelist.net/anime/'
+    url0 = 'https:/myanimelist.net/anime/'
     # url1 = '/Cowboy_Bebop/stats&m=all#members'
     animeCount = 34815
 

@@ -5,11 +5,11 @@ from scrapy.spidermiddlewares.httperror import HttpError
 from twisted.internet.error import DNSLookupError
 from twisted.internet.error import TimeoutError, TCPTimedOutError
 
-class QuotesSpider(scrapy.Spider):
-    name = "quotes"
+class QuotesSpider1(scrapy.Spider):
+    name = "quotes1"
     animeCount = 34815
     start_urls = [
-        'https://myanimelist.net/anime/1',
+        'https://myanimelist.net/anime/10000',
     ]
 
     def parse(self, response):
@@ -17,8 +17,8 @@ class QuotesSpider(scrapy.Spider):
         #f1 = open('./vals', 'w')
         #db = open('./debug', 'w')
         #view = open('./vw', 'w')
-        tb = open('./tb', 'a+')
-        mem= open('./members', 'a+')
+        tb = open('./tb1', 'a+')
+        mem= open('./members1', 'a+')
 
         stat=response.css('#horiznav_nav ul li:nth-child(6) a::attr(href)')
 

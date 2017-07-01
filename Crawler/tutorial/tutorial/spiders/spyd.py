@@ -4,7 +4,7 @@ import scrapy
 
 
 class QuotesSpider(scrapy.Spider):
-    name = "quotes"
+    name = "quot3es"
     start_urls = [
         'https://myanimelist.net/anime/1',
     ]
