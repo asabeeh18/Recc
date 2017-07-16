@@ -1,6 +1,7 @@
 from __future__ import print_function
 
 import scrapy
+import re
 from scrapy.spidermiddlewares.httperror import HttpError
 from twisted.internet.error import DNSLookupError
 from twisted.internet.error import TimeoutError, TCPTimedOutError
@@ -9,48 +10,39 @@ class QuotesSpider1(scrapy.Spider):
     name = "quotes1"
     animeCount = 34815
     start_urls = [
-        'https://myanimelist.net/anime/20000',
+        'https://myanimelist.net/anime/1',
     ]
-
     def parse(self, response):
-
-        #f1 = open('./vals', 'w')
-        #db = open('./debug', 'w')
-        #view = open('./vw', 'w')
-        tb = open('./tb2', 'a+')
-        mem= open('./members2', 'a+')
-
-        stat=response.css('#horiznav_nav ul li:nth-child(6) a::attr(href)')
+        tb = open('./tb', 'a+')
+        mem = open('./members', 'a+')
+        unv = open('./unvisited', 'a+')
+        missing = "?"
+        stat = response.css('#horiznav_nav ul li:nth-child(6) a::attr(href)')
 
         print(stat.extract()[0].encode('utf-8'), file=mem)
         resp = response.css('div.js-scrollfix-bottom')
 
         div = resp.css('div')[0]
-        #print(str(div), file=db)
+        # print(str(div), file=db)
         if len(div.css('.dark_text')) > 0:
-
-            k = []
-            for j in div.css('.dark_text::text'):
-                # print("Values: " + str(j.extract().encode('utf-8')), file=f1)
-                s = str(j.extract().encode('utf-8')).strip()
-                if (len(s) > 0):
-                    k.append(s)
-            keys = set(k)
-            # print(keys, file=view)
-
-            rawer_list=div.css(':not(h2):not(small):not(script)::text').extract()
+            keys = ["English:", "Rating:", "Members:", "Ranked:", "Producers:", "Premiered:", "Studios:",
+                   "Favorites:", "Aired:","Japanese:",
+                   "Licensors:", "Status:", "Genres:", "Popularity:", "Duration:", "Type:", "Source:",
+                   "Synonyms:", "Broadcast:", "Episodes:", "Score:"]
+            # values
+            rawer_list = div.css(':not(h2):not(small):not(script)::text').extract()
             # print(rawer_list,file=view)
 
-            raw_list=list()
+            raw_list = list()
 
             for j in rawer_list:
                 s = str(j.encode('utf-8')).strip()
-                if (len(s) > 0):
+                if len(s) > 0:
                     raw_list.append(s)
             # print(keys, file=db)
-            #print(raw_list, file=view)
+            # print(raw_list, file=view)
             table = dict()
-            for j in range(0,len(raw_list)):
+            for j in range(0, len(raw_list)):
                 s = raw_list[j]
                 if len(s) > 0:
                     # print("kv: " + str(j.encode('utf-8')))
@@ -67,15 +59,29 @@ class QuotesSpider1(scrapy.Spider):
                             if j == len(raw_list):
                                 break
                         j -= 1
-                        #print(s+":"+v, file=db)
-                        table[s] = v.strip()
+                        # print(s+":"+v, file=db)
+                        table[s] = re.sub('[\'\"]', '', v.strip())
+                else:
+                    print(response.url, file=unv)
+
+            keys = keys[:len(keys) - 1]
+            # Print to file
+            print(response.url[(response.url.rfind("/") + 1):], end='|', file=tb)
             for j in keys:
-                print(table[j], end='|', file=tb)
-            print("",file=tb)
-        print("---HERE END OUTPUT")
+                if j in table:
+                    print(table[j], end='|', file=tb)
+                else:
+                    print(missing, end='|', file=tb)
+            if "Score:" in table:
+                print(table["Score:"], file=tb)
+            else:
+                print(missing, file=tb)
+        else:
+            print(response.url, file=unv)
 
         tb.close()
         mem.close()
+        unv.close()
         next_page = self.giveurl(response.url)
         # print("~~next page: " + next_page)
         if next_page is not None:
@@ -103,7 +109,6 @@ class QuotesSpider1(scrapy.Spider):
                                      callback=self.parse,
                                      errback=self.errback_httpbin)
 
-
         elif failure.check(DNSLookupError):
             # this is the original request
             request = failure.request
@@ -115,7 +120,6 @@ class QuotesSpider1(scrapy.Spider):
 
         else:
             response = failure.value.response
-
 
     def giveurl(self, url):
         next_page = url

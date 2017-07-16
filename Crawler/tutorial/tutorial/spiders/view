@@ -1,0 +1,5 @@
+Use weka.filters.unsupervised.attribute.NominalToBinary with the -N argument to
+create binary attributes. If you want to treat your data as market-basket data
+for association rule mining, then you can either apply FPGrowth directly to the
+binary data, or, if you want to use Apriori, use the -Z option (tells Apriori to
+treat the first value of a binary attribute as missing).
