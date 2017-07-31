@@ -7,18 +7,27 @@ from twisted.internet.error import DNSLookupError
 from twisted.internet.error import TimeoutError, TCPTimedOutError
 
 class QuotesSpider1(scrapy.Spider):
+    handle_httpstatus_list = [404]
     name = "quotes1"
     animeCount = 34815
     start_urls = [
-        'https://myanimelist.net/anime/1',
+        'https://myanimelist.net/anime/30108',
     ]
     def parse(self, response):
         tb = open('./tb', 'a+')
         mem = open('./members', 'a+')
         unv = open('./unvisited', 'a+')
         missing = "?"
+        if response.status == 404:
+            next_page = self.giveurl(response.url)
+            # print("~~next page: " + next_page)
+            if next_page is not None:
+                next_page = response.urljoin(next_page)
+                yield scrapy.Request(next_page,
+                                     callback=self.parse,
+                                     errback=self.errback_httpbin)
+            return
         stat = response.css('#horiznav_nav ul li:nth-child(6) a::attr(href)')
-
         print(stat.extract()[0].encode('utf-8'), file=mem)
         resp = response.css('div.js-scrollfix-bottom')
 
@@ -29,6 +38,7 @@ class QuotesSpider1(scrapy.Spider):
                    "Favorites:", "Aired:","Japanese:",
                    "Licensors:", "Status:", "Genres:", "Popularity:", "Duration:", "Type:", "Source:",
                    "Synonyms:", "Broadcast:", "Episodes:", "Score:"]
+            # before score is count of users who scored
             # values
             rawer_list = div.css(':not(h2):not(small):not(script)::text').extract()
             # print(rawer_list,file=view)
@@ -69,11 +79,16 @@ class QuotesSpider1(scrapy.Spider):
             print(response.url[(response.url.rfind("/") + 1):], end='|', file=tb)
             for j in keys:
                 if j in table:
+                    if j == "Ranked:":
+                        table[j] = table[j][1:table[j].find(" ")]
                     print(table[j], end='|', file=tb)
                 else:
                     print(missing, end='|', file=tb)
             if "Score:" in table:
-                print(table["Score:"], file=tb)
+                j = "Score:"
+                print(table[j][table[j].find("scored by ")+10:table[j].find(" users")], end='|', file=tb)
+                table[j] = table[j][0:table[j].find(" ")]
+                print(table[j], file=tb)
             else:
                 print(missing, file=tb)
         else:
@@ -101,7 +116,7 @@ class QuotesSpider1(scrapy.Spider):
             # these exceptions come from HttpError spider middleware
             # you can get the non-200 response
             response = failure.value.response
-            self.logger.error('HttpError on %s', response.url)
+            self.logger.error('lalalHttpError on %s', response.url)
             next_page = self.giveurl(response.url)
             if next_page is not None:
                 next_page = response.urljoin(next_page)

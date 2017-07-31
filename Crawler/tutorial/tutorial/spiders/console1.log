@@ -1,0 +1,1156 @@
+2017-07-17 09:40:26 [scrapy.utils.log] INFO: Scrapy 1.3.1 started (bot: tutorial)
+2017-07-17 09:40:26 [scrapy.utils.log] INFO: Overridden settings: {'NEWSPIDER_MODULE': 'tutorial.spiders', 'SPIDER_MODULES': ['tutorial.spiders'], 'ROBOTSTXT_OBEY': True, 'BOT_NAME': 'tutorial'}
+2017-07-17 09:40:26 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.logstats.LogStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.corestats.CoreStats']
+2017-07-17 09:40:27 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['scrapy.downloadermiddlewares.robotstxt.RobotsTxtMiddleware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-07-17 09:40:27 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-07-17 09:40:27 [scrapy.middleware] INFO: Enabled item pipelines:
+[]
+2017-07-17 09:40:27 [scrapy.core.engine] INFO: Spider opened
+2017-07-17 09:40:28 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-07-17 09:40:28 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2017-07-17 09:40:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://myanimelist.net/robots.txt> (referer: None)
+2017-07-17 09:40:29 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25520> (referer: None)
+2017-07-17 09:40:30 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25520> (referer: None)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:30 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25521> (referer: https://myanimelist.net/anime/25520)
+2017-07-17 09:40:30 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25521> (referer: https://myanimelist.net/anime/25520)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:31 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25522> (referer: https://myanimelist.net/anime/25521)
+2017-07-17 09:40:31 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25522> (referer: https://myanimelist.net/anime/25521)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:31 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25523> (referer: https://myanimelist.net/anime/25522)
+2017-07-17 09:40:31 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25523> (referer: https://myanimelist.net/anime/25522)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:32 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25524> (referer: https://myanimelist.net/anime/25523)
+2017-07-17 09:40:32 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25524> (referer: https://myanimelist.net/anime/25523)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:32 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25525> (referer: https://myanimelist.net/anime/25524)
+2017-07-17 09:40:32 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25525> (referer: https://myanimelist.net/anime/25524)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:33 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25526> (referer: https://myanimelist.net/anime/25525)
+2017-07-17 09:40:33 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25526> (referer: https://myanimelist.net/anime/25525)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:33 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25527> (referer: https://myanimelist.net/anime/25526)
+2017-07-17 09:40:33 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25527> (referer: https://myanimelist.net/anime/25526)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:34 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25528> (referer: https://myanimelist.net/anime/25527)
+2017-07-17 09:40:34 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25528> (referer: https://myanimelist.net/anime/25527)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:34 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25529> (referer: https://myanimelist.net/anime/25528)
+2017-07-17 09:40:34 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25529> (referer: https://myanimelist.net/anime/25528)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:35 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25530> (referer: https://myanimelist.net/anime/25529)
+2017-07-17 09:40:35 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25530> (referer: https://myanimelist.net/anime/25529)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:35 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25531> (referer: https://myanimelist.net/anime/25530)
+2017-07-17 09:40:35 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25531> (referer: https://myanimelist.net/anime/25530)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:36 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25532> (referer: https://myanimelist.net/anime/25531)
+2017-07-17 09:40:36 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25532> (referer: https://myanimelist.net/anime/25531)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://myanimelist.net/anime/25533> (referer: https://myanimelist.net/anime/25532)
+2017-07-17 09:40:39 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25534> (referer: https://myanimelist.net/anime/25533)
+2017-07-17 09:40:39 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25534> (referer: https://myanimelist.net/anime/25533)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:39 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25535> (referer: https://myanimelist.net/anime/25534)
+2017-07-17 09:40:39 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25535> (referer: https://myanimelist.net/anime/25534)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:40 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25536> (referer: https://myanimelist.net/anime/25535)
+2017-07-17 09:40:40 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25536> (referer: https://myanimelist.net/anime/25535)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://myanimelist.net/anime/25537> (referer: https://myanimelist.net/anime/25536)
+2017-07-17 09:40:41 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25538> (referer: https://myanimelist.net/anime/25537)
+2017-07-17 09:40:41 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25538> (referer: https://myanimelist.net/anime/25537)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:42 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25539> (referer: https://myanimelist.net/anime/25538)
+2017-07-17 09:40:42 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25539> (referer: https://myanimelist.net/anime/25538)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:42 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25540> (referer: https://myanimelist.net/anime/25539)
+2017-07-17 09:40:42 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25540> (referer: https://myanimelist.net/anime/25539)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://myanimelist.net/anime/25541> (referer: https://myanimelist.net/anime/25540)
+2017-07-17 09:40:45 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25542> (referer: https://myanimelist.net/anime/25541)
+2017-07-17 09:40:45 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25542> (referer: https://myanimelist.net/anime/25541)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://myanimelist.net/anime/25543> (referer: https://myanimelist.net/anime/25542)
+2017-07-17 09:40:47 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25544> (referer: https://myanimelist.net/anime/25543)
+2017-07-17 09:40:48 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25544> (referer: https://myanimelist.net/anime/25543)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:49 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://myanimelist.net/anime/25545> (referer: https://myanimelist.net/anime/25544)
+2017-07-17 09:40:49 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25546> (referer: https://myanimelist.net/anime/25545)
+2017-07-17 09:40:49 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25546> (referer: https://myanimelist.net/anime/25545)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://myanimelist.net/anime/25547> (referer: https://myanimelist.net/anime/25546)
+2017-07-17 09:40:51 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25548> (referer: https://myanimelist.net/anime/25547)
+2017-07-17 09:40:51 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25548> (referer: https://myanimelist.net/anime/25547)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://myanimelist.net/anime/25549> (referer: https://myanimelist.net/anime/25548)
+2017-07-17 09:40:54 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25550> (referer: https://myanimelist.net/anime/25549)
+2017-07-17 09:40:54 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25550> (referer: https://myanimelist.net/anime/25549)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:54 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25551> (referer: https://myanimelist.net/anime/25550)
+2017-07-17 09:40:54 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25551> (referer: https://myanimelist.net/anime/25550)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:55 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25552> (referer: https://myanimelist.net/anime/25551)
+2017-07-17 09:40:55 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25552> (referer: https://myanimelist.net/anime/25551)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:55 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25553> (referer: https://myanimelist.net/anime/25552)
+2017-07-17 09:40:55 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25553> (referer: https://myanimelist.net/anime/25552)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:56 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25554> (referer: https://myanimelist.net/anime/25553)
+2017-07-17 09:40:56 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25554> (referer: https://myanimelist.net/anime/25553)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:56 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25555> (referer: https://myanimelist.net/anime/25554)
+2017-07-17 09:40:56 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25555> (referer: https://myanimelist.net/anime/25554)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:57 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25556> (referer: https://myanimelist.net/anime/25555)
+2017-07-17 09:40:57 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25556> (referer: https://myanimelist.net/anime/25555)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:57 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25557> (referer: https://myanimelist.net/anime/25556)
+2017-07-17 09:40:58 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25557> (referer: https://myanimelist.net/anime/25556)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:58 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25558> (referer: https://myanimelist.net/anime/25557)
+2017-07-17 09:40:58 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25558> (referer: https://myanimelist.net/anime/25557)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:58 [scrapy.core.engine] DEBUG: Crawled (429) <GET https://myanimelist.net/anime/25559> (referer: https://myanimelist.net/anime/25558)
+2017-07-17 09:40:59 [quotes1] ERROR: <twisted.python.failure.Failure scrapy.spidermiddlewares.httperror.HttpError: Ignoring non-200 response>
+2017-07-17 09:40:59 [quotes1] ERROR: lalalHttpError on https://myanimelist.net/anime/25559
+2017-07-17 09:40:59 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25560> (referer: https://myanimelist.net/anime/25559)
+2017-07-17 09:40:59 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25560> (referer: https://myanimelist.net/anime/25559)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:40:59 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25561> (referer: https://myanimelist.net/anime/25560)
+2017-07-17 09:41:00 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25561> (referer: https://myanimelist.net/anime/25560)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:00 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25562> (referer: https://myanimelist.net/anime/25561)
+2017-07-17 09:41:00 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25562> (referer: https://myanimelist.net/anime/25561)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:01 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25563> (referer: https://myanimelist.net/anime/25562)
+2017-07-17 09:41:01 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25563> (referer: https://myanimelist.net/anime/25562)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:01 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25564> (referer: https://myanimelist.net/anime/25563)
+2017-07-17 09:41:01 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25564> (referer: https://myanimelist.net/anime/25563)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:02 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25565> (referer: https://myanimelist.net/anime/25564)
+2017-07-17 09:41:02 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25565> (referer: https://myanimelist.net/anime/25564)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:02 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25566> (referer: https://myanimelist.net/anime/25565)
+2017-07-17 09:41:02 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25566> (referer: https://myanimelist.net/anime/25565)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:04 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://myanimelist.net/anime/25567> (referer: https://myanimelist.net/anime/25566)
+2017-07-17 09:41:05 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25568> (referer: https://myanimelist.net/anime/25567)
+2017-07-17 09:41:05 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25568> (referer: https://myanimelist.net/anime/25567)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:05 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25569> (referer: https://myanimelist.net/anime/25568)
+2017-07-17 09:41:05 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25569> (referer: https://myanimelist.net/anime/25568)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:06 [scrapy.core.engine] DEBUG: Crawled (429) <GET https://myanimelist.net/anime/25570> (referer: https://myanimelist.net/anime/25569)
+2017-07-17 09:41:06 [quotes1] ERROR: <twisted.python.failure.Failure scrapy.spidermiddlewares.httperror.HttpError: Ignoring non-200 response>
+2017-07-17 09:41:06 [quotes1] ERROR: lalalHttpError on https://myanimelist.net/anime/25570
+2017-07-17 09:41:06 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25571> (referer: https://myanimelist.net/anime/25570)
+2017-07-17 09:41:06 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25571> (referer: https://myanimelist.net/anime/25570)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:07 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25572> (referer: https://myanimelist.net/anime/25571)
+2017-07-17 09:41:07 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25572> (referer: https://myanimelist.net/anime/25571)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:08 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25573> (referer: https://myanimelist.net/anime/25572)
+2017-07-17 09:41:08 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25573> (referer: https://myanimelist.net/anime/25572)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:09 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25574> (referer: https://myanimelist.net/anime/25573)
+2017-07-17 09:41:09 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25574> (referer: https://myanimelist.net/anime/25573)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:09 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25575> (referer: https://myanimelist.net/anime/25574)
+2017-07-17 09:41:09 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25575> (referer: https://myanimelist.net/anime/25574)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:10 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25576> (referer: https://myanimelist.net/anime/25575)
+2017-07-17 09:41:10 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25576> (referer: https://myanimelist.net/anime/25575)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:10 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25577> (referer: https://myanimelist.net/anime/25576)
+2017-07-17 09:41:10 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25577> (referer: https://myanimelist.net/anime/25576)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:11 [scrapy.core.engine] DEBUG: Crawled (429) <GET https://myanimelist.net/anime/25578> (referer: https://myanimelist.net/anime/25577)
+2017-07-17 09:41:11 [quotes1] ERROR: <twisted.python.failure.Failure scrapy.spidermiddlewares.httperror.HttpError: Ignoring non-200 response>
+2017-07-17 09:41:11 [quotes1] ERROR: lalalHttpError on https://myanimelist.net/anime/25578
+2017-07-17 09:41:11 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25579> (referer: https://myanimelist.net/anime/25578)
+2017-07-17 09:41:11 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25579> (referer: https://myanimelist.net/anime/25578)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:12 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25580> (referer: https://myanimelist.net/anime/25579)
+2017-07-17 09:41:12 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25580> (referer: https://myanimelist.net/anime/25579)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:12 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25581> (referer: https://myanimelist.net/anime/25580)
+2017-07-17 09:41:12 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25581> (referer: https://myanimelist.net/anime/25580)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:13 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25582> (referer: https://myanimelist.net/anime/25581)
+2017-07-17 09:41:13 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25582> (referer: https://myanimelist.net/anime/25581)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:13 [scrapy.core.engine] DEBUG: Crawled (429) <GET https://myanimelist.net/anime/25583> (referer: https://myanimelist.net/anime/25582)
+2017-07-17 09:41:13 [quotes1] ERROR: <twisted.python.failure.Failure scrapy.spidermiddlewares.httperror.HttpError: Ignoring non-200 response>
+2017-07-17 09:41:13 [quotes1] ERROR: lalalHttpError on https://myanimelist.net/anime/25583
+2017-07-17 09:41:14 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25584> (referer: https://myanimelist.net/anime/25583)
+2017-07-17 09:41:14 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25584> (referer: https://myanimelist.net/anime/25583)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:14 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25585> (referer: https://myanimelist.net/anime/25584)
+2017-07-17 09:41:15 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25585> (referer: https://myanimelist.net/anime/25584)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:15 [scrapy.core.engine] DEBUG: Crawled (429) <GET https://myanimelist.net/anime/25586> (referer: https://myanimelist.net/anime/25585)
+2017-07-17 09:41:15 [quotes1] ERROR: <twisted.python.failure.Failure scrapy.spidermiddlewares.httperror.HttpError: Ignoring non-200 response>
+2017-07-17 09:41:15 [quotes1] ERROR: lalalHttpError on https://myanimelist.net/anime/25586
+2017-07-17 09:41:15 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25587> (referer: https://myanimelist.net/anime/25586)
+2017-07-17 09:41:15 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25587> (referer: https://myanimelist.net/anime/25586)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:16 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25588> (referer: https://myanimelist.net/anime/25587)
+2017-07-17 09:41:16 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25588> (referer: https://myanimelist.net/anime/25587)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://myanimelist.net/anime/25589> (referer: https://myanimelist.net/anime/25588)
+2017-07-17 09:41:19 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25590> (referer: https://myanimelist.net/anime/25589)
+2017-07-17 09:41:19 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25590> (referer: https://myanimelist.net/anime/25589)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://myanimelist.net/anime/25591> (referer: https://myanimelist.net/anime/25590)
+2017-07-17 09:41:22 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25592> (referer: https://myanimelist.net/anime/25591)
+2017-07-17 09:41:22 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25592> (referer: https://myanimelist.net/anime/25591)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:22 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25593> (referer: https://myanimelist.net/anime/25592)
+2017-07-17 09:41:23 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25593> (referer: https://myanimelist.net/anime/25592)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:23 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25594> (referer: https://myanimelist.net/anime/25593)
+2017-07-17 09:41:23 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25594> (referer: https://myanimelist.net/anime/25593)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:24 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25595> (referer: https://myanimelist.net/anime/25594)
+2017-07-17 09:41:24 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25595> (referer: https://myanimelist.net/anime/25594)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:24 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25596> (referer: https://myanimelist.net/anime/25595)
+2017-07-17 09:41:24 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25596> (referer: https://myanimelist.net/anime/25595)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://myanimelist.net/anime/25597> (referer: https://myanimelist.net/anime/25596)
+2017-07-17 09:41:26 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25598> (referer: https://myanimelist.net/anime/25597)
+2017-07-17 09:41:27 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25598> (referer: https://myanimelist.net/anime/25597)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://myanimelist.net/anime/25599> (referer: https://myanimelist.net/anime/25598)
+2017-07-17 09:41:28 [scrapy.extensions.logstats] INFO: Crawled 81 pages (at 81 pages/min), scraped 0 items (at 0 items/min)
+2017-07-17 09:41:28 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25600> (referer: https://myanimelist.net/anime/25599)
+2017-07-17 09:41:28 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25600> (referer: https://myanimelist.net/anime/25599)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://myanimelist.net/anime/25601> (referer: https://myanimelist.net/anime/25600)
+2017-07-17 09:41:31 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25602> (referer: https://myanimelist.net/anime/25601)
+2017-07-17 09:41:32 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25602> (referer: https://myanimelist.net/anime/25601)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:32 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25603> (referer: https://myanimelist.net/anime/25602)
+2017-07-17 09:41:32 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25603> (referer: https://myanimelist.net/anime/25602)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:32 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25604> (referer: https://myanimelist.net/anime/25603)
+2017-07-17 09:41:33 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25604> (referer: https://myanimelist.net/anime/25603)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://myanimelist.net/anime/25605> (referer: https://myanimelist.net/anime/25604)
+2017-07-17 09:41:35 [scrapy.core.engine] DEBUG: Crawled (429) <GET https://myanimelist.net/anime/25606> (referer: https://myanimelist.net/anime/25605)
+2017-07-17 09:41:35 [quotes1] ERROR: <twisted.python.failure.Failure scrapy.spidermiddlewares.httperror.HttpError: Ignoring non-200 response>
+2017-07-17 09:41:35 [quotes1] ERROR: lalalHttpError on https://myanimelist.net/anime/25606
+2017-07-17 09:41:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://myanimelist.net/anime/25607> (referer: https://myanimelist.net/anime/25606)
+2017-07-17 09:41:37 [scrapy.core.engine] DEBUG: Crawled (404) <GET https://myanimelist.net/anime/25608> (referer: https://myanimelist.net/anime/25607)
+2017-07-17 09:41:37 [scrapy.core.scraper] ERROR: Spider error processing <GET https://myanimelist.net/anime/25608> (referer: https://myanimelist.net/anime/25607)
+Traceback (most recent call last):
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\utils\defer.py", line 102, in iter_errback
+    yield next(it)
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\offsite.py", line 29, in process_spider_output
+    for x in result:
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\referer.py", line 22, in <genexpr>
+    return (_set_referer(r) for r in result or ())
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\urllength.py", line 37, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "c:\python27\lib\site-packages\scrapy-1.3.1-py2.7.egg\scrapy\spidermiddlewares\depth.py", line 58, in <genexpr>
+    return (r for r in result or () if _filter(r))
+  File "F:\PROgrammin\Recc\Crawler\tutorial\tutorial\spiders\infoSeld2.py", line 31, in parse
+    print(stat.extract()[0].encode('utf-8'), file=mem)
+IndexError: list index out of range
+2017-07-17 09:41:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://myanimelist.net/anime/25609> (referer: https://myanimelist.net/anime/25608)
+2017-07-17 09:41:40 [scrapy.core.engine] DEBUG: Crawled (429) <GET https://myanimelist.net/anime/25610> (referer: https://myanimelist.net/anime/25609)
+2017-07-17 09:41:40 [quotes1] ERROR: <twisted.python.failure.Failure scrapy.spidermiddlewares.httperror.HttpError: Ignoring non-200 response>
+2017-07-17 09:41:40 [quotes1] ERROR: lalalHttpError on https://myanimelist.net/anime/25610
