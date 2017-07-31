@@ -8,16 +8,26 @@ from twisted.internet.error import TimeoutError, TCPTimedOutError
 
 class QuotesSpider1(scrapy.Spider):
     handle_httpstatus_list = [404]
+    # name of spider
     name = "quotes1"
     animeCount = 34815
+    # initial url
     start_urls = [
-        'https://myanimelist.net/anime/30108',
+        'https://myanimelist.net/anime/1',
     ]
+
+    # function is automatically called
     def parse(self, response):
+        # data is stored in this file
         tb = open('./tb', 'a+')
+        # list of members page links
         mem = open('./members', 'a+')
+        # unvisited/error pages
         unv = open('./unvisited', 'a+')
+        # missing attributes
         missing = "?"
+
+        # In case page gives 404
         if response.status == 404:
             next_page = self.giveurl(response.url)
             # print("~~next page: " + next_page)
@@ -27,10 +37,12 @@ class QuotesSpider1(scrapy.Spider):
                                      callback=self.parse,
                                      errback=self.errback_httpbin)
             return
+        # member page link
         stat = response.css('#horiznav_nav ul li:nth-child(6) a::attr(href)')
         print(stat.extract()[0].encode('utf-8'), file=mem)
         resp = response.css('div.js-scrollfix-bottom')
 
+        # get side table
         div = resp.css('div')[0]
         # print(str(div), file=db)
         if len(div.css('.dark_text')) > 0:
@@ -39,10 +51,10 @@ class QuotesSpider1(scrapy.Spider):
                    "Licensors:", "Status:", "Genres:", "Popularity:", "Duration:", "Type:", "Source:",
                    "Synonyms:", "Broadcast:", "Episodes:", "Score:"]
             # before score is count of users who scored
-            # values
+            # Get Key-Value pairs
             rawer_list = div.css(':not(h2):not(small):not(script)::text').extract()
-            # print(rawer_list,file=view)
 
+            # create new list
             raw_list = list()
 
             for j in rawer_list:
@@ -51,9 +63,13 @@ class QuotesSpider1(scrapy.Spider):
                     raw_list.append(s)
             # print(keys, file=db)
             # print(raw_list, file=view)
+            # empty dictionary
             table = dict()
+
+            # Puts values in dictionary with corresponding keys
             for j in range(0, len(raw_list)):
                 s = raw_list[j]
+
                 if len(s) > 0:
                     # print("kv: " + str(j.encode('utf-8')))
                     # print(s, file=f2)
@@ -63,6 +79,7 @@ class QuotesSpider1(scrapy.Spider):
 
                         # print(s + " is in keys", file=db)
 
+                        # get value, -1 means start from beginning
                         while raw_list[j][-1] != ':':
                             v += (raw_list[j] + " ")
                             j += 1
@@ -70,13 +87,17 @@ class QuotesSpider1(scrapy.Spider):
                                 break
                         j -= 1
                         # print(s+":"+v, file=db)
+                        # remove single and double quotes
                         table[s] = re.sub('[\'\"]', '', v.strip())
                 else:
                     print(response.url, file=unv)
 
+            # remove last element in keys
             keys = keys[:len(keys) - 1]
             # Print to file
+            # put the anime number(the nmber at end of url) in file
             print(response.url[(response.url.rfind("/") + 1):], end='|', file=tb)
+            # output to file
             for j in keys:
                 if j in table:
                     if j == "Ranked:":
@@ -99,12 +120,19 @@ class QuotesSpider1(scrapy.Spider):
         unv.close()
         next_page = self.giveurl(response.url)
         # print("~~next page: " + next_page)
+        # next page
         if next_page is not None:
             next_page = response.urljoin(next_page)
             yield scrapy.Request(next_page,
                                  callback=self.parse,
                                  errback=self.errback_httpbin)
+    # next url
+    def giveurl(self, url):
+        next_page = url
+        i = next_page.rfind("/") + 1
+        return next_page[:i] + str((int(next_page[i:]) + 1))
 
+    # error handling functions
     def errback_httpbin(self, failure):
         # log all failures
         self.logger.error(repr(failure))
@@ -135,8 +163,3 @@ class QuotesSpider1(scrapy.Spider):
 
         else:
             response = failure.value.response
-
-    def giveurl(self, url):
-        next_page = url
-        i = next_page.rfind("/") + 1
-        return next_page[:i] + str((int(next_page[i:]) + 1))
